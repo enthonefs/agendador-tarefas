@@ -13,7 +13,6 @@ public class UserDetailsServiceImpl {
 
     @Autowired
     private UsuarioClient client;
-
     public UserDetails carregaDadosUsuario(String email, String token){
 
         UsuarioDTO usuarioDTO = client.buscarPorEmail(email, token);
@@ -22,6 +21,5 @@ public class UserDetailsServiceImpl {
                 .password(usuarioDTO.getSenha()) // Define a senha do usuário
                 .build();
     }
-
 
 }
