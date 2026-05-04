@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(value = "/usuario", url = "${usuario.url}")
+@FeignClient(value = "usuario", url = "${usuario.url}")
 public interface UsuarioClient {
 
     @GetMapping("/usuario")
     UsuarioDTO buscarPorEmail(@RequestParam String email,
-                   @RequestHeader("Authorization") String token);
+                              @RequestHeader("Authorization") String token);
 
 }
